@@ -1,7 +1,9 @@
 .container {
   width: 100%;
   height: 80px;
-  border-bottom: 2px dashed black;
+  border-bottom: 2px dashed #000;
+  position: fixed;
+  background: #fff;
 }
 
 .tab_container {
@@ -25,17 +27,17 @@
 }
 .tab_green {
   background: green;
-  color: white;
+  color: #fff;
 }
 .tab_blue {
   background: blue;
-  color: white;
+  color: #fff;
 }
 .tab_navy {
   background: navy;
-  color: white;
+  color: #fff;
 }
 .tab_purple {
   background: purple;
-  color: white;
+  color: #fff;
 }
