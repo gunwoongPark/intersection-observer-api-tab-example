@@ -1,5 +1,12 @@
+import { ForwardedRef, forwardRef } from "react";
 import styles from "./Orange.module.css";
 
-export default function Orange() {
-  return <div className={styles.container}>Orange</div>;
-}
+const Orange = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
+  return (
+    <div className={styles.container} ref={ref}>
+      Orange
+    </div>
+  );
+});
+
+export default Orange;

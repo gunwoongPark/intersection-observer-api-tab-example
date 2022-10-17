@@ -1,5 +1,12 @@
+import { ForwardedRef, forwardRef } from "react";
 import styles from "./Green.module.css";
 
-export default function Green() {
-  return <div className={styles.container}>Green</div>;
-}
+const Green = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
+  return (
+    <div className={styles.container} ref={ref}>
+      Green
+    </div>
+  );
+});
+
+export default Green;

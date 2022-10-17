@@ -1,5 +1,12 @@
+import { ForwardedRef, forwardRef } from "react";
 import styles from "./Navy.module.css";
 
-export default function Navy() {
-  return <div className={styles.container}>Navy</div>;
-}
+const Navy = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
+  return (
+    <div className={styles.container} ref={ref}>
+      Navy
+    </div>
+  );
+});
+
+export default Navy;
