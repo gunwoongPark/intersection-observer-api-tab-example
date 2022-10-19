@@ -1,21 +1,22 @@
-import { RefObject, useEffect } from "react";
+import { MutableRefObject, useEffect } from "react";
 
 const useIntersectionObserver = ({
   callback,
-  ref,
+  refs,
 }: {
   callback: (entries: IntersectionObserverEntry[]) => void;
-  ref: RefObject<HTMLDivElement>;
+  refs: MutableRefObject<HTMLDivElement[]>;
 }) => {
   useEffect(() => {
-    const observer = new IntersectionObserver(callback, { threshold: 0.5 });
+    const observer = new IntersectionObserver(callback, { threshold: 0.25 });
 
-    if (!!ref.current) {
-      observer.observe(ref.current);
+    if (!!refs.current.length) {
+      console.log(refs);
+      refs.current.forEach((ref) => observer.observe(ref));
     }
 
     return () => observer && observer.disconnect();
-  }, [callback, ref]);
+  }, [callback, refs]);
 };
 
 export default useIntersectionObserver;
