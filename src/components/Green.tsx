@@ -11,6 +11,7 @@ const Green = (props: { refs: MutableRefObject<HTMLDivElement[]> }) => {
         }
         props.refs.current[3] = el;
       }}
+      id="GREEN"
     >
       Green
     </div>

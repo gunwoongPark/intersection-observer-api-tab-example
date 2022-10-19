@@ -1,4 +1,4 @@
-import { useCallback, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Header from "./components/Header";
 import Red from "./components/Red";
 import Orange from "./components/Orange";
@@ -12,8 +12,14 @@ import useIntersectionObserver from "./hooks/useIntersectionObserver";
 function App() {
   const rainbowRefs = useRef<HTMLDivElement[]>([]);
 
+  const [currentTab, setCurrentTab] = useState<string>("");
+
   const handleObserver = useCallback((entries: IntersectionObserverEntry[]) => {
-    console.log(entries.find((entry) => entry.isIntersecting));
+    const dom = entries.find((entry) => entry.isIntersecting);
+    if (!dom) {
+      return;
+    }
+    setCurrentTab(dom.target.id);
   }, []);
 
   useIntersectionObserver({
@@ -23,7 +29,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header currentTab={currentTab} />
       <Red refs={rainbowRefs} />
       <Orange refs={rainbowRefs} />
       <Yellow refs={rainbowRefs} />

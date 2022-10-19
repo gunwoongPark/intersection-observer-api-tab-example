@@ -1,6 +1,11 @@
+import { useEffect } from "react";
 import styles from "./Header.module.css";
 
-const Header = () => {
+const Header = (props: { currentTab: string }) => {
+  useEffect(() => {
+    console.log(props.currentTab);
+  }, [props.currentTab]);
+
   return (
     <div className={styles.container}>
       <ul className={styles.tab_container}>

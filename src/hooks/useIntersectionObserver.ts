@@ -11,7 +11,6 @@ const useIntersectionObserver = ({
     const observer = new IntersectionObserver(callback, { threshold: 0.25 });
 
     if (!!refs.current.length) {
-      console.log(refs);
       refs.current.forEach((ref) => observer.observe(ref));
     }
 
