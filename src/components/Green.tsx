@@ -1,12 +1,20 @@
-import { ForwardedRef, forwardRef } from "react";
+import { MutableRefObject } from "react";
 import styles from "./Green.module.css";
 
-const Green = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
+const Green = (props: { refs: MutableRefObject<HTMLDivElement[]> }) => {
   return (
-    <div className={styles.container} ref={ref}>
+    <div
+      className={styles.container}
+      ref={(el) => {
+        if (!el) {
+          return;
+        }
+        props.refs.current[3] = el;
+      }}
+    >
       Green
     </div>
   );
-});
+};
 
 export default Green;

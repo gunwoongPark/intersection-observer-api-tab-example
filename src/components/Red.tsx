@@ -1,17 +1,17 @@
-import { MutableRefObject, useEffect, useRef } from "react";
+import { MutableRefObject } from "react";
 import styles from "./Red.module.css";
 
-const Red = (props: { refs: MutableRefObject<HTMLDivElement[] | null> }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!!containerRef.current && !!props.refs) {
-      props.refs.current[0] = containerRef;
-    }
-  }, [containerRef, props.refs]);
-
+const Red = (props: { refs: MutableRefObject<HTMLDivElement[]> }) => {
   return (
-    <div className={styles.container} ref={containerRef}>
+    <div
+      className={styles.container}
+      ref={(el) => {
+        if (!el) {
+          return;
+        }
+        props.refs.current[0] = el;
+      }}
+    >
       Red
     </div>
   );

@@ -1,12 +1,20 @@
-import { ForwardedRef, forwardRef } from "react";
+import { MutableRefObject } from "react";
 import styles from "./Navy.module.css";
 
-const Navy = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
+const Navy = (props: { refs: MutableRefObject<HTMLDivElement[]> }) => {
   return (
-    <div className={styles.container} ref={ref}>
+    <div
+      className={styles.container}
+      ref={(el) => {
+        if (!el) {
+          return;
+        }
+        props.refs.current[5] = el;
+      }}
+    >
       Navy
     </div>
   );
-});
+};
 
 export default Navy;
