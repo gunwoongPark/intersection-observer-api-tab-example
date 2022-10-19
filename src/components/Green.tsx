@@ -1,10 +1,9 @@
 import { MutableRefObject } from "react";
-import styles from "./Green.module.css";
+import styled from "styled-components";
 
 const Green = (props: { refs: MutableRefObject<HTMLDivElement[]> }) => {
   return (
-    <div
-      className={styles.container}
+    <Pub.Container
       ref={(el) => {
         if (!el) {
           return;
@@ -14,8 +13,21 @@ const Green = (props: { refs: MutableRefObject<HTMLDivElement[]> }) => {
       id="GREEN"
     >
       Green
-    </div>
+    </Pub.Container>
   );
 };
 
 export default Green;
+
+const Pub = {
+  Container: styled.div`
+    height: 200vh;
+    width: 100%;
+    background: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    color: #fff;
+  `,
+};

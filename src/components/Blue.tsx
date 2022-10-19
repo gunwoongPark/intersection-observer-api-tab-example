@@ -1,10 +1,9 @@
 import { MutableRefObject } from "react";
-import styles from "./Blue.module.css";
+import styled from "styled-components";
 
 const Blue = (props: { refs: MutableRefObject<HTMLDivElement[]> }) => {
   return (
-    <div
-      className={styles.container}
+    <Pub.Container
       ref={(el) => {
         if (!el) {
           return;
@@ -14,8 +13,21 @@ const Blue = (props: { refs: MutableRefObject<HTMLDivElement[]> }) => {
       id="BLUE"
     >
       Blue
-    </div>
+    </Pub.Container>
   );
 };
 
 export default Blue;
+
+const Pub = {
+  Container: styled.div`
+    height: 200vh;
+    width: 100%;
+    background: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    color: #fff;
+  `,
+};

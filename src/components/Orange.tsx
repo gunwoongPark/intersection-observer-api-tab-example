@@ -1,10 +1,9 @@
 import { MutableRefObject } from "react";
-import styles from "./Orange.module.css";
+import styled from "styled-components";
 
 const Orange = (props: { refs: MutableRefObject<HTMLDivElement[]> }) => {
   return (
-    <div
-      className={styles.container}
+    <Pub.Container
       ref={(el) => {
         if (!el) {
           return;
@@ -14,8 +13,20 @@ const Orange = (props: { refs: MutableRefObject<HTMLDivElement[]> }) => {
       id="ORANGE"
     >
       Orange
-    </div>
+    </Pub.Container>
   );
 };
 
 export default Orange;
+
+const Pub = {
+  Container: styled.div`
+    height: 200vh;
+    width: 100%;
+    background: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+  `,
+};

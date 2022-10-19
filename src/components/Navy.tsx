@@ -1,10 +1,9 @@
 import { MutableRefObject } from "react";
-import styles from "./Navy.module.css";
+import styled from "styled-components";
 
 const Navy = (props: { refs: MutableRefObject<HTMLDivElement[]> }) => {
   return (
-    <div
-      className={styles.container}
+    <Pub.Container
       ref={(el) => {
         if (!el) {
           return;
@@ -14,8 +13,21 @@ const Navy = (props: { refs: MutableRefObject<HTMLDivElement[]> }) => {
       id="NAVY"
     >
       Navy
-    </div>
+    </Pub.Container>
   );
 };
 
 export default Navy;
+
+const Pub = {
+  Container: styled.div`
+    height: 200vh;
+    width: 100%;
+    background: navy;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    color: #fff;
+  `,
+};

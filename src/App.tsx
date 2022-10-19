@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import Header from "./components/Header";
 import Red from "./components/Red";
 import Orange from "./components/Orange";

@@ -1,10 +1,9 @@
 import { MutableRefObject } from "react";
-import styles from "./Purple.module.css";
+import styled from "styled-components";
 
 const Purple = (props: { refs: MutableRefObject<HTMLDivElement[]> }) => {
   return (
-    <div
-      className={styles.container}
+    <Pub.Container
       ref={(el) => {
         if (!el) {
           return;
@@ -14,8 +13,21 @@ const Purple = (props: { refs: MutableRefObject<HTMLDivElement[]> }) => {
       id="PURPLE"
     >
       Purple
-    </div>
+    </Pub.Container>
   );
 };
 
 export default Purple;
+
+const Pub = {
+  Container: styled.div`
+    height: 200vh;
+    width: 100%;
+    background: purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    color: #fff;
+  `,
+};
