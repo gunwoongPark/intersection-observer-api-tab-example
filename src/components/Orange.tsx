@@ -1,12 +1,14 @@
-import { ForwardedRef, forwardRef } from "react";
 import styles from "./Orange.module.css";
 
-const Orange = forwardRef((_, ref: ForwardedRef<HTMLDivElement>) => {
+const Orange = (props: { refs: any }) => {
   return (
-    <div className={styles.container} ref={ref}>
+    <div
+      className={styles.container}
+      ref={(el) => (props.refs.current[1] = el)}
+    >
       Orange
     </div>
   );
-});
+};
 
 export default Orange;

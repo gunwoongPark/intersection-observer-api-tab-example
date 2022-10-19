@@ -8,7 +8,7 @@ const useIntersectionObserver = ({
   ref: RefObject<HTMLDivElement>;
 }) => {
   useEffect(() => {
-    const observer = new IntersectionObserver(callback, { threshold: 1 });
+    const observer = new IntersectionObserver(callback, { threshold: 0.5 });
 
     if (!!ref.current) {
       observer.observe(ref.current);
