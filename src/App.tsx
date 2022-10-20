@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Header from "./components/Header";
 import Red from "./components/Red";
 import Orange from "./components/Orange";
@@ -29,7 +29,7 @@ function App() {
 
   return (
     <>
-      <Header currentTab={currentTab} />
+      <Header currentTab={currentTab} refs={rainbowRefs} />
       <Red refs={rainbowRefs} />
       <Orange refs={rainbowRefs} />
       <Yellow refs={rainbowRefs} />

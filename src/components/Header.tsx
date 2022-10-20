@@ -1,21 +1,24 @@
-import { useEffect } from "react";
+import { MutableRefObject } from "react";
 import styled from "styled-components";
 
-const Header = (props: { currentTab: string }) => {
-  useEffect(() => {
-    console.log(props.currentTab);
-  }, [props.currentTab]);
-
+const Header = (props: {
+  currentTab: string;
+  refs: MutableRefObject<HTMLDivElement[]>;
+}) => {
   return (
     <Pub.Container>
       <ul className="tab-container">
-        <li className={`tab red${props.currentTab === "RED" ? " active" : ""}`}>
+        <li
+          className={`tab red${props.currentTab === "RED" ? " active" : ""}`}
+          onClick={() => props.refs.current[0].scrollIntoView()}
+        >
           RED
         </li>
         <li
           className={`tab orange${
             props.currentTab === "ORANGE" ? " active" : ""
           }`}
+          onClick={() => props.refs.current[1].scrollIntoView()}
         >
           ORANGE
         </li>
@@ -23,6 +26,7 @@ const Header = (props: { currentTab: string }) => {
           className={`tab yellow${
             props.currentTab === "YELLOW" ? " active" : ""
           }`}
+          onClick={() => props.refs.current[2].scrollIntoView()}
         >
           YELLOW
         </li>
@@ -30,16 +34,19 @@ const Header = (props: { currentTab: string }) => {
           className={`tab green${
             props.currentTab === "GREEN" ? " active" : ""
           }`}
+          onClick={() => props.refs.current[3].scrollIntoView()}
         >
           GREEN
         </li>
         <li
           className={`tab blue${props.currentTab === "BLUE" ? " active" : ""}`}
+          onClick={() => props.refs.current[4].scrollIntoView()}
         >
           BLUE
         </li>
         <li
           className={`tab navy${props.currentTab === "NAVY" ? " active" : ""}`}
+          onClick={() => props.refs.current[5].scrollIntoView()}
         >
           NAVY
         </li>
@@ -47,6 +54,7 @@ const Header = (props: { currentTab: string }) => {
           className={`tab purple${
             props.currentTab === "PURPLE" ? " active" : ""
           }`}
+          onClick={() => props.refs.current[6].scrollIntoView()}
         >
           PURPLE
         </li>
@@ -74,6 +82,7 @@ const Pub = {
       height: 100%;
 
       & .tab {
+        cursor: pointer;
         &.active {
           border-bottom: 2.5px solid black;
         }
