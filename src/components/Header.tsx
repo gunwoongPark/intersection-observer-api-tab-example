@@ -9,43 +9,43 @@ const Header = (props: { currentTab: string }) => {
   return (
     <Pub.Container>
       <ul className="tab-container">
-        <li className={`tab red ${props.currentTab === "RED" ? "active" : ""}`}>
+        <li className={`tab red${props.currentTab === "RED" ? " active" : ""}`}>
           RED
         </li>
         <li
-          className={`tab orange ${
-            props.currentTab === "ORANGE" ? "active" : ""
+          className={`tab orange${
+            props.currentTab === "ORANGE" ? " active" : ""
           }`}
         >
           ORANGE
         </li>
         <li
-          className={`tab yellow ${
-            props.currentTab === "YELLOW" ? "active" : ""
+          className={`tab yellow${
+            props.currentTab === "YELLOW" ? " active" : ""
           }`}
         >
           YELLOW
         </li>
         <li
-          className={`tab green ${
-            props.currentTab === "GREEN" ? "active" : ""
+          className={`tab green${
+            props.currentTab === "GREEN" ? " active" : ""
           }`}
         >
           GREEN
         </li>
         <li
-          className={`tab blue ${props.currentTab === "BLUE" ? "active" : ""}`}
+          className={`tab blue${props.currentTab === "BLUE" ? " active" : ""}`}
         >
           BLUE
         </li>
         <li
-          className={`tab navy ${props.currentTab === "NAVY" ? "active" : ""}`}
+          className={`tab navy${props.currentTab === "NAVY" ? " active" : ""}`}
         >
           NAVY
         </li>
         <li
-          className={`tab purple ${
-            props.currentTab === "PURPLE" ? "active" : ""
+          className={`tab purple${
+            props.currentTab === "PURPLE" ? " active" : ""
           }`}
         >
           PURPLE
