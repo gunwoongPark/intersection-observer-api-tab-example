@@ -82,9 +82,10 @@ const Pub = {
       height: 100%;
 
       & .tab {
+        padding: 14px;
         cursor: pointer;
         &.active {
-          border-bottom: 2.5px solid black;
+          border: 4px solid black;
         }
 
         &.red {
